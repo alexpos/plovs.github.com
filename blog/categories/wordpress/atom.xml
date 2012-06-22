@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: WordPress | Plovs Corner]]></title>
+  <link href="http://poslavsky.com/blog/categories/wordpress/atom.xml" rel="self"/>
+  <link href="http://poslavsky.com/"/>
+  <updated>2012-06-22T18:17:43+02:00</updated>
+  <id>http://poslavsky.com/</id>
+  <author>
+    <name><![CDATA[Alex Poslavsky]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Backing up WordPress, its a dirty job, but you still have to do it]]></title>
+    <link href="http://poslavsky.com/blog/2012/06/22/wordpress-backups/"/>
+    <updated>2012-06-22T17:31:00+02:00</updated>
+    <id>http://poslavsky.com/blog/2012/06/22/wordpress-backups</id>
+    <content type="html"><![CDATA[<p><a href="http://en.wikiquote.org/wiki/Last_words">Famous last words</a>, <a href="http://www.darwinawards.com/">darwin awards</a>, not things you want associated with your blog or website. Things should work smoothly, and always just work! unfortunately, that's not how the internet works. Everything that can possibly break, sooner or later will. To make sure you survive, make backups of your WordPress install!</p>
+
+<h2>I hate reading, what should I do?</h2>
+
+<p>For small sites, install <a href="http://WordPress.org/extend/plugins/backupWordPress/">Backup WordPress</a>, backup to a gmail account, easy and free backup. When you outgrow this plugin go for <a href="http://WordPress.org/extend/plugins/backwpup/">BackWPup</a> or, a bit simpler to use: <a href="http://WordPress.org/extend/plugins/WordPress-backup-to-dropbox/">WordPress backup to Dropbox</a> and do your backups to dropbox.</p>
+
+<h2>What to backup?</h2>
+
+<p>WordPress consists of:</p>
+
+<ul>
+<li>WordPress itself -- no need to backup, can be downloaded from <a href="http://WordPress.org">WordPress.org</a></li>
+<li>Themes -- important to have the latest copy of your theme (the other themes are not important)</li>
+<li>Upload -- your images etc (<strong>note:</strong> This can be changed in <strong>Admin Panel > Settings > Media > Store uploads in this folder</strong>)</li>
+<li>Your database</li>
+<li>wp-config.php -- in the root of your WordPress install (<strong>note:</strong> Sometimes wp-config.php is stored one directory higher, ask your developer)</li>
+<li>.htaccess (in the root of your WordPress install)</li>
+<li>Miscellaneous other files (ask your developer)</li>
+</ul>
+
+
+<p>Some of these files almost never, if ever, change but you should have at least one copy.</p>
+
+<p>To make a copy of your files by hand, use an <a href="http://codex.WordPress.org/WordPress_Backups#Manual_Backup_Resources">ftp-client</a>. Your database can be exported under <strong>Admin Panel > Tools > Export</strong>, or you can use <a href="http://codex.WordPress.org/phpMyAdmin">phpMyAdmin</a>.</p>
+
+<p>Further reading on the WordPress codex:</p>
+
+<ul>
+<li><a href="http://codex.WordPress.org/Backing_Up_Your_WordPress_Files">Backing up your WordPress files</a></li>
+<li><a href="http://codex.WordPress.org/WordPress_Backups#Manual_Backup_Resources">Manual backup resources</a></li>
+<li><a href="http://codex.WordPress.org/phpMyAdmin">Using phpMyAdmin</a></li>
+</ul>
+
+
+<h2>Automating your backups</h2>
+
+<p>Doing things by hand is error-prone, this should be automated. For that, there are a plethora of plugins. Some good, some not so much. Here is a list of the once I like:</p>
+
+<h2><a id="freebackup"></a>Free backup plugins</h2>
+
+<p>Free plugins are nice, easy to try, if you don't like 'm, no harm done. The down-side is that you get what you pay for. The free plugins can do the job, but you must pay attention and set things up right. These are the best plugins I have worked with:</p>
+
+<ul>
+<li><a href="http://WordPress.org/extend/plugins/wp-dbmanager/">WP db-manager</a> -- Allows you to optimize database, repair database, backup database, restore database, delete backup database , drop/empty tables and run selected queries. Supports automatic scheduling of backing up, optimizing and repairing of database.</li>
+<li><a href="http://WordPress.org/extend/plugins/backupWordPress/">Backup WordPress</a> (<a href="https://github.com/humanmade/backupWordPress/">git repo</a>) -- Backs up your entire site including your database and all your files once every day, can be send by mail, good for smaller installs</li>
+<li><a href="http://WordPress.org/extend/plugins/backwpup/">BackWPup</a> -- Complete backup solution, saves locally, dropbox etc.</li>
+<li><a href="http://WordPress.org/extend/plugins/wp-time-machine/">wp Time Machine</a> -- Creates an archive of all your WordPress Data &amp; Files and then stores them on Dropbox, Amazon's S3, or your FTP host.</li>
+<li><a href="http://WordPress.org/extend/plugins/WordPress-backup-to-dropbox/">WordPress backup to Dropbox</a> (<a href="https://github.com/michaeldewildt/WordPress-Backup-to-Dropbox">git repo</a>) [Main site][wpb2d] -- straight forward backup to a dropbox account.</li>
+<li><a href="http://www.xcloner.com/">Xcloner</a> -- This plugin has the best restore function build in, but making backups is a bit more involved.</li>
+</ul>
+
+
+<p>Complete list <a href="http://WordPress.org/extend/plugins/backup/">of the backup plugins on WordPress.org</a></p>
+
+<p>What plugin to use? For small sites I would go with <a href="http://WordPress.org/extend/plugins/backupWordPress/">Backup WordPress</a>, backup to a gmail account, easy and free backup. When you outgrow this plugin go for <a href="http://WordPress.org/extend/plugins/backwpup/">BackWPup</a> or, a bit simpler to use: <a href="http://WordPress.org/extend/plugins/WordPress-backup-to-dropbox/">WordPress backup to Dropbox</a> (but some functionality, like email notifications and zip support are premium extensions)</p>
+
+<p><a href="http://WordPress.org/extend/plugins/wp-dbmanager/">WP db-manager</a> is often recommended, but it only backs up the database, I prefer the afore-mentioned plugins. They are simpler to use in the long-run.</p>
+
+<p>If you don't have a dropbox account, <a href="http://db.tt/sjAoj6C">get one here</a> for free (affiliate link, gives me free space).</p>
+
+<h2><a id="premiumbackup"></a>Premium backup plugins</h2>
+
+<p>Considering how important backups are, you might want to go for a premium plugin. These are the ones most recommended:</p>
+
+<ul>
+<li><a href="http://vaultpress.com/">Vaultpress</a> -- $15/month, from the makers of WordPress.com especially nice is their automatic restore.</li>
+<li><a href="http://blogvault.net/">Blog Vault</a> -- $9/month, automatic backup of your WordPress site, plugins and themes with blogVault.</li>
+<li><a href="http://www.backupcreator.com/">Backup Creator</a> -- $7 about the same functionality as <a href="http://WordPress.org/extend/plugins/backupWordPress/">Backup WordPress</a> (<a href="http://www.michaelstults.com/2012/03/backup-WordPress-using-backup-creator/">walkthrough</a>)</li>
+<li><a href="http://pluginbuddy.com/purchase/backupbuddy/">BackupBuddy</a> -- $75 very powerful plugin, complete backups, database only, save to dropbox, ftp etc. (<a href="http://www.thinkdave.com/how-to-backup-WordPress-in-your-sleep/">walkthrough</a>)</li>
+<li><a href="http://getbackuppress.com/">Backuppress</a> -- $5/month Simple (to use) complete backup solution ([buprv][review])</li>
+</ul>
+
+
+<p>Is it worth it to go premium? It is possible to do the same thing with a free plugin, but it is <em>easier</em> with a premium plugin. And what is definitely easier is restoring from backup, which is not the case using the free plugins.</p>
+
+<h3>Alternative ways of backing up your site</h3>
+
+<ul>
+<li><a href="http://www.noupe.com/WordPress/how-to-backup-your-WordPress-website.html">Noupe</a> -- Explains how to use cPanel to make a backup of your site, and phpMyAmin for the database.</li>
+<li><a href="http://WordPress.org/extend/plugins/backuper/">Backuper</a> -- WP Backup plugin to be used with cPanel.</li>
+<li><a href="http://www.expand2web.com/blog/back-up-WordPress-website-blog/">expand2web</a> -- Mentions blue host, which has its own WP backup solution</li>
+</ul>
+
+
+<p>These kind of backup solutions are nice as an extra, or if you have very specific needs, but it is best to go for a <a href="#freebackup">free</a> or <a href="#premiumbackup">premium</a> backup plugin.</p>
+
+<h2>Backup and Restore,</h2>
+
+<p>Backup and restore are two sides of the same coin. One really does not exist without the other. To be sure that you are safe you have to do both at least once.</p>
+
+<p><strong>Don't restore over your existing installation!</strong> Test on a test-machine (even if it is your desktop), or in a custom location (http://mysite/testwp/ for example)</p>
+
+<p>The premium plugins have restore build-in. With the free plugins you have to do it yourself. The codex <a href="http://codex.WordPress.org/Restoring_Your_Database_From_Backup">explains how to do it</a>. If you want to move your install, meaning you want to change the url of your site <a href="http://codex.WordPress.org/Moving_WordPress">read this on the codex</a> and you might want to use the <a href="http://WordPress.org/extend/plugins/velvet-blues-update-urls/">velvet blues update plugin</a>, to fix links and locations.</p>
+
+<ul>
+<li><a href="http://codex.WordPress.org/Restoring_Your_Database_From_Backup">Restoring your WordPress files</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
